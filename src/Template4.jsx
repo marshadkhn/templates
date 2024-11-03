@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaFacebookSquare,
   FaTwitterSquare,
   FaInstagramSquare,
+  FaBars
 } from "react-icons/fa";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const Template4 = () => {
+const Template4 = ({ data }) => {
+  const [open, setOpen] = useState(false);
+  // Destructure data prop
+  const {
+    companyName,
+    phoneNo,
+    email,
+    content,
+    logo,
+    images = [],
+  } = data || {};
+
   return (
     <div className="bg-white text-white">
       {/* Navbar */}
@@ -16,14 +28,28 @@ const Template4 = () => {
           {/* Nav Logo */}
           <div className="flex-shrink-0">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPCnjO77h-mMKfTcRHCMoG9KjBnMfHW9a4Fso2kL-YjO2I-jk2qcMCjef3D0wLcvcwnEA&usqp=CAU"
-              alt="Company Logo"
-              className="h-16" // Increased logo size
+              src={logo || "https://via.placeholder.com/150"}
+              alt={`${companyName} Logo`}
+              className="h-12 lg:h-16"
             />
           </div>
 
+          {/* Hamburger Menu for Mobile */}
+          <div className="lg:hidden">
+            <button
+              className="text-black focus:outline-none"
+              onClick={() => setOpen(!open)}
+            >
+              <FaBars size={28} />
+            </button>
+          </div>
+
           {/* Nav Items */}
-          <ul className="flex space-x-8 flex-wrap">
+          <ul
+            className={`${
+              open ? "block" : "hidden"
+            } w-full lg:w-auto lg:flex space-y-4 lg:space-y-0 lg:space-x-8 mt-4 lg:mt-0 flex-wrap`}
+          >
             {["About", "Services", "Testimonials", "Contact"].map((item) => (
               <li key={item}>
                 <a
@@ -37,7 +63,11 @@ const Template4 = () => {
           </ul>
 
           {/* Nav Social Icons */}
-          <div className="flex space-x-4">
+          <div
+            className={`${
+              open ? "flex" : "hidden"
+            } w-full flex-row lg:w-auto lg:flex space-x-4 lg:space-y-0 mt-4 lg:mt-0 justify-center`}
+          >
             {[
               {
                 icon: <FaFacebookSquare size={28} />,
@@ -66,7 +96,7 @@ const Template4 = () => {
 
       {/* Hero Section */}
       <div
-        className="relative text-left py-32 bg-gray-900 bg-cover bg-center min-h-screen"
+        className="relative text-left py-20 bg-gray-900 bg-cover bg-center min-h-[70vh] flex items-center justify-center"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1444676632488-26a136c45b9b?q=80&w=1937&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
         }}
@@ -79,12 +109,12 @@ const Template4 = () => {
           {/* Line (divider or stylistic element) */}
           <hr className="border-t-4 border-white w-24 mb-4 mx-auto" />
 
-          {/* Heading (with dummy data) */}
+          {/* Heading */}
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Welcome to Your Future
           </h1>
 
-          {/* Paragraph (with dummy data) */}
+          {/* Paragraph */}
           <p className="text-lg text-gray-300 mb-8 leading-relaxed">
             Discover endless possibilities with our platform. We provide the
             tools and solutions to help you achieve your dreams, no matter the
@@ -98,7 +128,7 @@ const Template4 = () => {
         </div>
       </div>
 
-      {/* Our Products   */}
+      {/* About Us   */}
       <div className="w-full max-w-4xl mx-auto mt-10 flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden">
         {/* First Half: Image Grid */}
         <div className="md:w-1/2 p-4 grid grid-cols-2 gap-4">
@@ -115,16 +145,9 @@ const Template4 = () => {
 
         {/* Second Half: Content */}
         <div className="md:w-1/2 p-6 flex flex-col justify-center">
-          <p className="text-gray-600 mb-2 font-medium">House Info</p>
-          <h2 className="text-3xl font-bold mb-4 text-black">Custom Villa</h2>
-          <p className="text-gray-700 mb-4">
-            This is the first paragraph describing the content. It provides some
-            context or details about the topic.
-          </p>
-          <p className="text-gray-700 mb-6 mt-4">
-            This is the second paragraph, offering additional insights or
-            information.
-          </p>
+          <p className="text-gray-600 mb-2 font-medium">{companyName}</p>
+          <h2 className="text-3xl font-bold mb-4 text-black">About Us</h2>
+          <p className="text-gray-700 mb-4">{content.aboutUs.description}</p>
           <button className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow hover:bg-blue-700 transition duration-200 transform hover:scale-105">
             Click Me
           </button>
@@ -135,14 +158,13 @@ const Template4 = () => {
       <div className="bg-gradient-to-r from-[#f0f4f8] to-[#e6effa] flex items-center justify-center min-h-screen mt-32 py-10">
         <div className="w-full max-w-4xl p-6 text-center">
           <p className="text-gray-700 mb-4">
-            Discover our wide range of services designed to cater to your needs.
-            Our expert team is here to help you achieve your goals.
+            Discover our wide range of services designed to cater to your needs
           </p>
           <h2 className="text-3xl font-bold mb-6 text-blue-800">
             Our Services
           </h2>
 
-          {/* Box divs */}
+          {/* Services Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 mt-6">
             {[
               {
@@ -200,7 +222,7 @@ const Template4 = () => {
       </div>
 
       {/* Testimonial section*/}
-      <div className="w-full max-w-4xl mx-auto p-6  text-center mt-32 bg-gradient-to-r from-blue-500 to-blue-300 rounded-lg shadow-lg">
+      <div className="w-full max-w-4xl mx-auto p-6 text-center mt-32 bg-gradient-to-r from-blue-500 to-blue-300 rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold mb-4 text-white">
           What Our Clients Say
         </h2>
@@ -220,25 +242,7 @@ const Template4 = () => {
           showStatus={false}
           className="rounded-lg overflow-hidden"
         >
-          {[
-            {
-              name: "Alice Johnson",
-              review:
-                "This is a fantastic service! I would recommend it to everyone.",
-            },
-            {
-              name: "Bob Smith",
-              review: "Amazing experience! The team is very professional.",
-            },
-            {
-              name: "Charlie Brown",
-              review: "Outstanding support and service. Truly impressed!",
-            },
-            {
-              name: "Diana Prince",
-              review: "Exceptional quality! Will definitely return for more.",
-            },
-          ].map((client, index) => (
+          {content.testimonials.map((client, index) => (
             <div
               key={index}
               className="flex flex-col items-center border border-white p-6 bg-white rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl"
