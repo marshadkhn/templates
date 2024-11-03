@@ -1,0 +1,64 @@
+{
+    "companyName": "U-Work Uitzendbureau",
+    "category": "Construction",
+    "phoneNo": "2347828282",
+    "email": "info@uwork.nu",
+    "logo": "https://www.logo.wine/a/logo/Nvidia/Nvidia-Logo.wine.svg",
+    "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+        
+    ],
+    "content": {
+        "conatact_information": {
+            "Bedrijfsnaam": "EGMA",
+            "address": "123 Hoofdstraat, Amsterdam, Nederland",
+            "pictures_url": "https://egma.nl/projecten",
+            "website": "https://egma.nl",
+            "phone": "+31 20 123 4567"
+        },
+        "hero": {
+            "title": "Jouw Partner in Professionele Websites",
+            "description": "Bij EGMA creëren we websites die resultaten opleveren. Van ontwerp tot ontwikkeling, wij helpen je bedrijf online te laten groeien."
+        },
+        "aboutUs": {
+            "description": "EGMA is een toonaangevend webdesignbureau gevestigd in Amsterdam, gespecialiseerd in het bouwen van op maat gemaakte websites en digitale oplossingen. Ons team van experts staat klaar om jouw visie te verwezenlijken met innovatieve, effectieve en gebruiksvriendelijke websites."
+        },
+        "services": [
+            {
+                "title": "Webdesign",
+                "description": "Wij ontwerpen visueel aantrekkelijke websites die perfect aansluiten bij jouw merk en doelgroep."
+            },
+            {
+                "title": "Webontwikkeling",
+                "description": "Met onze technische expertise bouwen we functionele websites die scoren in snelheid, veiligheid en gebruiksvriendelijkheid."
+            }
+        ],
+        "testimonials": [
+            {
+                "name": "Sander de Vries",
+                "review": "EGMA heeft onze website compleet vernieuwd en het resultaat is verbluffend! Professioneel, efficiënt en klantgericht."
+            },
+            {
+                "name": "Lotte Jansen",
+                "review": "Vanaf het eerste gesprek wist EGMA precies wat wij zochten. Het team is deskundig en levert uitstekende service."
+            }
+        ],
+        "ourTeam": [
+            {
+                "name": "Jan Meijer",
+                "designation": "Hoofd Webontwerp"
+            },
+            {
+                "name": "Anna de Boer",
+                "designation": "Senior Webontwikkelaar"
+            }
+        ],
+        "footer": {
+            "title": "Neem contact op met EGMA",
+            "content": "Benieuwd wat we voor jou kunnen betekenen? Neem vandaag nog contact met ons op via +31 20 123 4567 of bezoek ons op 123 Hoofdstraat, Amsterdam. Samen brengen we jouw online visie tot leven."
+        }
+    }
+}
