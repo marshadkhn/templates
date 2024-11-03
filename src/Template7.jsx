@@ -151,7 +151,9 @@ function Template7({ data }) {
       {/* Testimonial Section */}
       <section className="bg-gradient-to-r from-purple-500 to-pink-500 py-20 px-4 md:px-12 lg:px-24">
         <div className="container mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-white">What Our Students Say</h2>
+        <h2 className="text-3xl font-bold mb-4 text-white">
+        What Our Clients Say
+      </h2>
           <div className={`flex ${testimonials?.length < 3 ? "justify-center" : "justify-between"} flex-wrap gap-12`}>
             {testimonials?.map((testimonial, index) => (
               <div key={index} className="bg-white p-8 rounded-lg shadow-lg relative w-full md:w-1/3">
