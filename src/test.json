@@ -32,6 +32,10 @@
                 "description": "Wij ontwerpen visueel aantrekkelijke websites die perfect aansluiten bij jouw merk en doelgroep."
             },
             {
+                "title": "Webdesign",
+                "description": "Wij ontwerpen visueel aantrekkelijke websites die perfect aansluiten bij jouw merk en doelgroep."
+            },
+            {
                 "title": "Webontwikkeling",
                 "description": "Met onze technische expertise bouwen we functionele websites die scoren in snelheid, veiligheid en gebruiksvriendelijkheid."
             }
@@ -52,8 +56,8 @@
                 "designation": "Hoofd Webontwerp"
             },
             {
-                "name": "Anna de Boer",
-                "designation": "Senior Webontwikkelaar"
+                "name": "Jan Meijer",
+                "designation": "Hoofd Webontwerp"
             }
         ],
         "footer": {

@@ -8,10 +8,10 @@ import test from "../src/test.json"
 function App() {
   return (
     <>
-      {/* <Template4 /> */}
-      <Template5 data={test}/>
-      {/* <Template6 data={test}/> */}
-      {/* <Template7 data={test} /> */}
+      {/*<Template4 data={test} /> */}
+      {/* <Template5 data={test}/>*/}
+      {/*<Template6 data={test}/> */}
+       <Template7 data={test} /> 
     </>
   );
 }

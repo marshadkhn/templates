@@ -47,9 +47,8 @@ function Template5({ data }) {
 
           {/* Nav Items */}
           <ul
-            className={`${
-              open ? "block" : "hidden"
-            } w-full lg:w-auto lg:flex space-y-4 lg:space-y-0 lg:space-x-8 mt-4 lg:mt-0 flex-wrap`}
+            className={`${open ? "block" : "hidden"
+              } w-full lg:w-auto lg:flex space-y-4 lg:space-y-0 lg:space-x-8 mt-4 lg:mt-0 flex-wrap`}
           >
             {["About", "Services", "Testimonials", "Contact"].map((item) => (
               <li key={item}>
@@ -65,9 +64,8 @@ function Template5({ data }) {
 
           {/* Nav Social Icons */}
           <div
-            className={`${
-              open ? "flex" : "hidden"
-            } w-full flex-row lg:w-auto lg:flex space-x-4 lg:space-y-0 mt-4 lg:mt-0 justify-center`}
+            className={`${open ? "flex" : "hidden"
+              } w-full flex-row lg:w-auto lg:flex space-x-4 lg:space-y-0 mt-4 lg:mt-0 justify-center`}
           >
             {[
               {
@@ -149,12 +147,14 @@ function Template5({ data }) {
           <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">
             Our Services
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            className={`grid gap-8 ${content.services.length < 3
+              ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-center"
+              : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+              }`}
+          >
             {content.services.map((service, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
-                {/* <div className="text-4xl mb-4 text-blue-600">
-                  {service.icon}
-                </div> */}
                 <h3 className="text-xl font-semibold mb-2 text-gray-700">
                   {service.title}
                 </h3>
@@ -164,6 +164,7 @@ function Template5({ data }) {
           </div>
         </div>
       </section>
+
 
       {/* Testimonial section*/}
       <div className="w-full max-w-4xl mx-auto p-6 text-center mt-32 bg-gradient-to-r from-blue-500 to-blue-300 rounded-lg shadow-lg">
@@ -226,7 +227,12 @@ function Template5({ data }) {
         </p>
 
         {/* Team Member Boxes */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div
+          className={`grid gap-6 ${content.ourTeam.length < 3
+              ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-2 justify-center"
+              : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+            }`}
+        >
           {content.ourTeam.map((member, index) => (
             <div
               key={index}

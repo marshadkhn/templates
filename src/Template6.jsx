@@ -61,9 +61,8 @@ function Template6({ data }) {
 
           {/* Nav Items */}
           <ul
-            className={`${
-              open ? "block" : "hidden"
-            } w-full lg:w-auto lg:flex space-y-4 lg:space-y-0 lg:space-x-8 mt-4 lg:mt-0 flex-wrap`}
+            className={`${open ? "block" : "hidden"
+              } w-full lg:w-auto lg:flex space-y-4 lg:space-y-0 lg:space-x-8 mt-4 lg:mt-0 flex-wrap`}
           >
             {["About", "Services", "Testimonials", "Contact"].map((item) => (
               <li key={item}>
@@ -79,9 +78,8 @@ function Template6({ data }) {
 
           {/* Nav Social Icons */}
           <div
-            className={`${
-              open ? "flex" : "hidden"
-            } w-full flex-row lg:w-auto lg:flex space-x-4 lg:space-y-0 mt-4 lg:mt-0 justify-center`}
+            className={`${open ? "flex" : "hidden"
+              } w-full flex-row lg:w-auto lg:flex space-x-4 lg:space-y-0 mt-4 lg:mt-0 justify-center`}
           >
             {[
               {
@@ -132,17 +130,21 @@ function Template6({ data }) {
       </section>
 
       {/* About Us Section */}
+      {/* About Us Section */}
       <section className="bg-blue-100 py-12 px-4 lg:py-16 lg:px-8">
         <div className="container mx-auto bg-white bg-opacity-80 p-6 lg:p-8 rounded-lg">
           <h2 className="text-2xl lg:text-3xl font-bold mb-6 lg:mb-8 text-center text-blue-900">
             Develop your skills in a new and unique way
           </h2>
           <p className="text-md lg:text-lg text-center text-blue-800 mb-8 lg:mb-12">
-            Explore a transformative approach to skill development on our online
-            learning platform.
+            Explore a transformative approach to skill development on our online learning platform.
           </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+          <div
+            className={`${
+              about.length <= 2 ? "flex justify-center gap-6" : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            }`}
+          >
             {about.map((service, index) => (
               <div
                 key={index}
@@ -158,7 +160,7 @@ function Template6({ data }) {
               </div>
             ))}
           </div>
-
+      
           <div className="flex justify-center mt-8 lg:mt-12">
             <button className="bg-blue-500 text-white py-3 px-8 rounded-full hover:bg-blue-600 transition-colors duration-300">
               Enroll Now
@@ -166,14 +168,18 @@ function Template6({ data }) {
           </div>
         </div>
       </section>
+      
 
       {/* Services section */}
+      {/* Services Section */}
       <section className="bg-white py-12 px-4 lg:py-16 lg:px-8">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">
-            Our Services
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Our Services</h2>
+          <div
+            className={`${
+              services.length <= 2 ? "flex justify-center gap-8" : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+            }`}
+          >
             {services.map((service, index) => (
               <div
                 key={index}
@@ -187,9 +193,7 @@ function Template6({ data }) {
                 <h3 className="text-xl font-semibold mb-2 text-gray-800">
                   {service.title}
                 </h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  {service.description}
-                </p>
+                <p className="text-sm text-gray-600 mb-4">{service.description}</p>
                 <div className="flex items-center text-yellow-500 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <FaStar key={i} />
@@ -200,35 +204,37 @@ function Template6({ data }) {
           </div>
         </div>
       </section>
+      
 
       {/* Testimonial Section */}
-      <section className="bg-blue-500 py-12 px-4 lg:py-16 lg:px-8">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center text-white">
-            What Our Clients Say
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Map through dynamic testimonials */}
-            {testimonials.map((client, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-lg text-center"
-              >
-                <div className="flex justify-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} className="text-yellow-500" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-4">{client.review}</p>
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {client.name}
-                </h3>
-                <p className="text-gray-600">{client.role}</p>
-              </div>
+      {/* Testimonial Section */}
+<section className="bg-blue-500 py-12 px-4 lg:py-16 lg:px-8">
+  <div className="container mx-auto">
+    <h2 className="text-3xl font-bold mb-8 text-center text-white">What Our Clients Say</h2>
+    <div
+      className={`${
+        testimonials.length <= 2 ? "flex justify-center gap-8" : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+      }`}
+    >
+      {testimonials.map((client, index) => (
+        <div
+          key={index}
+          className="bg-white p-6 rounded-lg shadow-lg text-center"
+        >
+          <div className="flex justify-center mb-4">
+            {[...Array(5)].map((_, i) => (
+              <FaStar key={i} className="text-yellow-500" />
             ))}
           </div>
+          <p className="text-gray-700 mb-4">{client.review}</p>
+          <h3 className="text-xl font-semibold text-gray-900">{client.name}</h3>
+          <p className="text-gray-600">{client.role}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Footer */}
       <footer className="bg-white text-black py-8">
