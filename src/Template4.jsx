@@ -189,6 +189,14 @@ function Template4({ data }) {
           <p className="text-center mt-6">&copy; {new Date().getFullYear()} {companyName}. Alle rechten voorbehouden.</p>
         </div>
       </footer>
+
+      {/* Made with Love Section */}
+      <div className="text-center py-4 bg-gray-300 text-black">
+        <p className="text-lg">
+          Gemaakt met {/* Made with */}
+          <span role="img" aria-label="love">❤️</span> door {/* by */} Leeuw Studio
+        </p>
+      </div>
     </div>
   );
 }

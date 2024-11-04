@@ -350,6 +350,14 @@ function Template2({ data }) {
           © 2024 Uw Bedrijf. Alle rechten voorbehouden.{/* © 2024 Your Company. All rights reserved. */}
         </p>
       </footer>
+
+      {/* Made with Love Section */}
+      <div className="text-center py-4 bg-gray-800 text-white">
+        <p className="text-lg">
+          Gemaakt met {/* Made with */}
+          <span role="img" aria-label="love">❤️</span> door {/* by */} Leeuw Studio
+        </p>
+      </div>
     </div>
   );
 }
