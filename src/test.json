@@ -5,6 +5,8 @@
     "email": "info@uwork.nu",
     "logo": "https://www.logo.wine/a/logo/Nvidia/Nvidia-Logo.wine.svg",
     "images": [
+        "https://via.placeholder.com/1200x800",
+        "https://via.placeholder.com/150",
         "https://via.placeholder.com/150",
         "https://via.placeholder.com/150",
         "https://via.placeholder.com/150",
@@ -12,7 +14,7 @@
         
     ],
     "content": {
-        "conatact_information": {
+        "contact_information": {
             "Bedrijfsnaam": "EGMA",
             "address": "123 Hoofdstraat, Amsterdam, Nederland",
             "pictures_url": "https://egma.nl/projecten",
@@ -36,11 +38,15 @@
                 "description": "Wij ontwerpen visueel aantrekkelijke websites die perfect aansluiten bij jouw merk en doelgroep."
             },
             {
-                "title": "Webontwikkeling",
-                "description": "Met onze technische expertise bouwen we functionele websites die scoren in snelheid, veiligheid en gebruiksvriendelijkheid."
+                "title": "Webdesign",
+                "description": "Wij ontwerpen visueel aantrekkelijke websites die perfect aansluiten bij jouw merk en doelgroep."
             }
         ],
         "testimonials": [
+            {
+                "name": "Sander de Vries",
+                "review": "EGMA heeft onze website compleet vernieuwd en het resultaat is verbluffend! Professioneel, efficiënt en klantgericht."
+            },
             {
                 "name": "Sander de Vries",
                 "review": "EGMA heeft onze website compleet vernieuwd en het resultaat is verbluffend! Professioneel, efficiënt en klantgericht."
@@ -51,6 +57,14 @@
             }
         ],
         "ourTeam": [
+            {
+                "name": "Jan Meijer",
+                "designation": "Hoofd Webontwerp"
+            },
+            {
+                "name": "Jan Meijer",
+                "designation": "Hoofd Webontwerp"
+            },
             {
                 "name": "Jan Meijer",
                 "designation": "Hoofd Webontwerp"

@@ -10,7 +10,7 @@ import {
   FaBars,
 } from "react-icons/fa";
 
-function Template6({ data }) {
+function Template3({ data }) {
   const [open, setOpen] = useState(false);
   const {
     companyName,
@@ -24,16 +24,6 @@ function Template6({ data }) {
   // Added extraction of services and testimonials
   const services = content.services || [];
   const testimonials = content.testimonials || [];
-  const about = [
-    {
-      title: "Webdesign",
-      icon: <FaStar />, // Replace with actual icons if available
-    },
-    {
-      title: "Webontwikkeling",
-      icon: <FaStar />, // Replace with actual icons if available
-    },
-  ];
 
   return (
     <div className="bg-white text-black">
@@ -41,13 +31,8 @@ function Template6({ data }) {
       <nav className="bg-white p-6 font-poppins">
         <div className="flex justify-between items-center max-w-7xl mx-auto flex-wrap">
           {/* Nav Logo */}
-          <div className="flex-shrink-0">
-            <img
-              src={logo || "https://via.placeholder.com/150"}
-              alt={`${companyName} Logo`}
-              className="h-12 lg:h-16"
-            />
-          </div>
+          <h1 className="text-2xl font-semibold text-black flex-1">{companyName}</h1>
+
 
           {/* Hamburger Menu for Mobile */}
           <div className="lg:hidden">
@@ -62,9 +47,9 @@ function Template6({ data }) {
           {/* Nav Items */}
           <ul
             className={`${open ? "block" : "hidden"
-              } w-full lg:w-auto lg:flex space-y-4 lg:space-y-0 lg:space-x-8 mt-4 lg:mt-0 flex-wrap`}
+              } w-full lg:w-auto lg:flex space-y-4 lg:space-y-0 lg:space-x-8 mt-4 lg:mt-0 justify-center flex-wrap flex-1`}
           >
-            {["About", "Services", "Testimonials", "Contact"].map((item) => (
+            {["Over", "Diensten", "Getuigenissen", "Contact"].map((item) => (
               <li key={item}>
                 <a
                   href={`#${item.toLowerCase()}`}
@@ -79,7 +64,7 @@ function Template6({ data }) {
           {/* Nav Social Icons */}
           <div
             className={`${open ? "flex" : "hidden"
-              } w-full flex-row lg:w-auto lg:flex space-x-4 lg:space-y-0 mt-4 lg:mt-0 justify-center`}
+              } w-full flex-row lg:w-auto lg:flex space-x-4 lg:space-y-0 mt-4 lg:mt-0 justify-end flex-1`}
           >
             {[
               {
@@ -108,7 +93,7 @@ function Template6({ data }) {
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-blue-100 py-12 px-4 lg:py-16 lg:px-8 relative overflow-hidden">
+      <section className="bg-blue-100 h-[25em] py-12 px-4 lg:py-16 lg:px-8 relative overflow-hidden">
         <img
           src={images[0] || "https://via.placeholder.com/1200x800"}
           alt="Background"
@@ -123,67 +108,55 @@ function Template6({ data }) {
           </p>
           <div className="flex justify-center">
             <button className="bg-blue-500 text-white py-3 px-8 rounded-full hover:bg-blue-600 transition-colors duration-300">
-              Get Started
+              Aan de slag {/* Get Started */}
             </button>
           </div>
         </div>
       </section>
 
-      {/* About Us Section */}
       {/* About Us Section */}
       <section className="bg-blue-100 py-12 px-4 lg:py-16 lg:px-8">
         <div className="container mx-auto bg-white bg-opacity-80 p-6 lg:p-8 rounded-lg">
           <h2 className="text-2xl lg:text-3xl font-bold mb-6 lg:mb-8 text-center text-blue-900">
-            Develop your skills in a new and unique way
+            Ontwikkel je vaardigheden op een nieuwe en unieke manier
+            {/* Develop your skills in a new and unique way */}
           </h2>
           <p className="text-md lg:text-lg text-center text-blue-800 mb-8 lg:mb-12">
-            Explore a transformative approach to skill development on our online learning platform.
+            Ontdek een transformatieve aanpak voor vaardigheidsontwikkeling op ons online leerplatform.
+            {/* Explore a transformative approach to skill development on our online learning platform. */}
           </p>
-      
+
           <div
-            className={`${
-              about.length <= 2 ? "flex justify-center gap-6" : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-            }`}
+            className="flex flex-wrap justify-center gap-6"
           >
-            {about.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-lg text-center transform transition-transform duration-300 hover:scale-105"
-              >
-                <div className="mb-4">{service.icon}</div>
-                <h3 className="text-lg lg:text-xl font-semibold mb-2 text-blue-900">
-                  {service.title}
-                </h3>
-                <p className="text-gray-700 text-sm lg:text-base">
-                  {content.aboutUs.description}
-                </p>
-              </div>
-            ))}
+            <p className="text-gray-700 text-sm lg:text-base">
+              {content.aboutUs.description}
+            </p>
           </div>
-      
+
           <div className="flex justify-center mt-8 lg:mt-12">
             <button className="bg-blue-500 text-white py-3 px-8 rounded-full hover:bg-blue-600 transition-colors duration-300">
-              Enroll Now
+              Schrijf je nu in
+              {/* Enroll Now */}
             </button>
           </div>
         </div>
       </section>
-      
 
-      {/* Services section */}
+
       {/* Services Section */}
       <section className="bg-white py-12 px-4 lg:py-16 lg:px-8">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Our Services</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">
+            Onze diensten{/* Our Services */}
+          </h2>
           <div
-            className={`${
-              services.length <= 2 ? "flex justify-center gap-8" : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-            }`}
+            className="flex flex-wrap justify-center gap-8"
           >
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+                className="bg-white w-[30em] p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
               >
                 <img
                   src={images[0] || "https://via.placeholder.com/1200x800"}
@@ -204,47 +177,48 @@ function Template6({ data }) {
           </div>
         </div>
       </section>
-      
 
       {/* Testimonial Section */}
-      {/* Testimonial Section */}
-<section className="bg-blue-500 py-12 px-4 lg:py-16 lg:px-8">
-  <div className="container mx-auto">
-    <h2 className="text-3xl font-bold mb-8 text-center text-white">What Our Clients Say</h2>
-    <div
-      className={`${
-        testimonials.length <= 2 ? "flex justify-center gap-8" : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-      }`}
-    >
-      {testimonials.map((client, index) => (
-        <div
-          key={index}
-          className="bg-white p-6 rounded-lg shadow-lg text-center"
-        >
-          <div className="flex justify-center mb-4">
-            {[...Array(5)].map((_, i) => (
-              <FaStar key={i} className="text-yellow-500" />
+      <section className="bg-blue-500 py-12 px-4 lg:py-16 lg:px-8">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center text-white">
+            Wat onze klanten zeggen
+            {/* What Our Clients Say */}
+          </h2>
+          <div
+            className="flex flex-wrap justify-center gap-8"
+          >
+            {testimonials.map((client, index) => (
+              <div
+                key={index}
+                className="bg-white w-[30em] p-6 rounded-lg shadow-lg text-center"
+              >
+                <div className="flex justify-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} className="text-yellow-500" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">{client.review}</p>
+                <h3 className="text-xl font-semibold text-gray-900">{client.name}</h3>
+                <p className="text-gray-600">{client.role}</p>
+              </div>
             ))}
           </div>
-          <p className="text-gray-700 mb-4">{client.review}</p>
-          <h3 className="text-xl font-semibold text-gray-900">{client.name}</h3>
-          <p className="text-gray-600">{client.role}</p>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
 
       {/* Footer */}
       <footer className="bg-white text-black py-8">
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
+        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           <div>
-            <h3 className="font-bold text-lg">Company</h3>
+            <h3 className="font-bold text-lg">
+              Bedrijf{/* Company  */}
+            </h3>
             <ul>
               <li>
                 <a href="#" className="text-gray-600 hover:underline">
-                  About Us
+                  Over ons{/* About Us */}
                 </a>
               </li>
               <li>
@@ -255,7 +229,9 @@ function Template6({ data }) {
             </ul>
           </div>
           <div>
-            <h3 className="font-bold text-lg">Follow Us</h3>
+            <h3 className="font-bold text-lg">
+              Volg ons{/* Follow Us */}
+            </h3>
             <ul>
               <li>
                 <a href="#" className="text-gray-600 hover:underline">
@@ -275,22 +251,24 @@ function Template6({ data }) {
             </ul>
           </div>
           <div>
-            <h3 className="font-bold text-lg">Legal</h3>
+            <h3 className="font-bold text-lg">Juridisch</h3>
             <ul>
               <li>
                 <a href="#" className="text-gray-600 hover:underline">
-                  Privacy Policy
+                  Privacybeleid{/* Privacy Policy */}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-600 hover:underline">
-                  Terms of Service
+                  Servicevoorwaarden{/* Terms of Service */}
                 </a>
               </li>
             </ul>
           </div>
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
-            <h3 className="font-bold text-lg">Contact Us</h3>
+            <h3 className="font-bold text-lg">
+              Contacteer ons{/* Contact Us */}
+            </h3>
             <p className="text-gray-600">{phoneNo}</p>
             <p className="text-gray-600">{email}</p>
           </div>
@@ -300,4 +278,4 @@ function Template6({ data }) {
   );
 }
 
-export default Template6;
+export default Template3;

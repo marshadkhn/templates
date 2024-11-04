@@ -12,7 +12,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 
-function Template7({ data }) {
+function Template4({ data }) {
   const [open, setOpen] = useState(false);
 
   // Destructure data prop
@@ -34,13 +34,7 @@ function Template7({ data }) {
       <nav className="bg-white p-6 font-poppins shadow-2xl shadow-black">
         <div className="flex justify-between items-center max-w-7xl mx-auto flex-wrap">
           {/* Nav Logo */}
-          <div className="flex-shrink-0">
-            <img
-              src={logo}
-              alt={`${companyName} Logo`}
-              className="h-12 lg:h-16"
-            />
-          </div>
+          <h1 className="text-2xl font-semibold text-black flex-1">{companyName}</h1>
 
           {/* Hamburger Menu for Mobile */}
           <div className="lg:hidden">
@@ -54,11 +48,10 @@ function Template7({ data }) {
 
           {/* Nav Items */}
           <ul
-            className={`${
-              open ? "block" : "hidden"
-            } w-full lg:w-auto lg:flex space-y-4 lg:space-y-0 lg:space-x-8 mt-4 lg:mt-0 flex-wrap`}
+            className={`${open ? "block" : "hidden"
+              } w-full lg:w-auto lg:flex space-y-4 lg:space-y-0 lg:space-x-8 mt-4 lg:mt-0 justify-center flex-wrap flex-1`}
           >
-            {["About", "Services", "Testimonials", "Contact"].map((item) => (
+            {["Over", "Diensten", "Getuigenissen", "Contact"].map((item) => (
               <li key={item}>
                 <a
                   href={`#${item.toLowerCase()}`}
@@ -72,13 +65,12 @@ function Template7({ data }) {
 
           {/* Nav Social Icons */}
           <div
-            className={`${
-              open ? "flex" : "hidden"
-            } w-full flex-row lg:w-auto lg:flex space-x-4 lg:space-y-0 mt-4 lg:mt-0 justify-center`}
+            className={`${open ? "flex" : "hidden"
+              } w-full flex-row lg:w-auto lg:flex space-x-4 lg:space-y-0 mt-4 lg:mt-0 justify-end flex-1`}
           >
             {[{ icon: <FaFacebookSquare size={28} />, link: "https://facebook.com" },
-              { icon: <FaTwitterSquare size={28} />, link: "https://twitter.com" },
-              { icon: <FaInstagramSquare size={28} />, link: "https://instagram.com" },
+            { icon: <FaTwitterSquare size={28} />, link: "https://twitter.com" },
+            { icon: <FaInstagramSquare size={28} />, link: "https://instagram.com" },
             ].map(({ icon, link }, index) => (
               <a key={index} href={link} className="text-black hover:text-gray-600">
                 {icon}
@@ -91,21 +83,23 @@ function Template7({ data }) {
       {/* Hero Section */}
       <section className="bg-gray-100 py-16 px-4 md:px-8 lg:px-12">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="order-2 md:order-1">
+          <div className="order-2 md:order-1 ps-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">{hero?.title}</h2>
             <p className="text-gray-600 mb-6">{hero?.description}</p>
             <button className="bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 mb-4 md:mb-0">
-              Discover More
+              Ontdek meer{/* Discover More */}
             </button>
           </div>
-          <div className="order-1 md:order-2 relative">
+          <div className="order-1 md:order-2 relative flex justify-center">
             <img
               src={images[0] || "https://via.placeholder.com/600x400?text=Hero+Image"} // Updated default image
               alt="Hero Image"
-              className="rounded-lg shadow-lg w-full h-full object-cover mb-4"
+              className="rounded-lg shadow-lg w-[40em] h-[30em] object-cover mb-4"
             />
             <div className="absolute top-2 right-2 bg-white p-4 rounded-lg shadow-md">
-              <p className="text-blue-600 text-sm font-semibold">20+ Years Of Experience</p>
+              <p className="text-blue-600 text-sm font-semibold">
+                20+ jaar ervaring{/* 20+ Years Of Experience */}
+              </p>
             </div>
           </div>
         </div>
@@ -114,27 +108,28 @@ function Template7({ data }) {
       {/* About Us Section */}
       <section className="bg-purple-50 py-20 px-6 md:px-12 lg:px-24">
         <div className="container mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-purple-800">A BIT ABOUT US</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-purple-800">Een beetje over ons</h2> {/* A bit about us */}
           <p className="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">{aboutUs?.description}</p>
           <button className="bg-purple-600 text-white py-3 px-8 rounded-full hover:bg-purple-700 transition duration-300">
-            EXPLORE MORE
+            ONTDEK MEER{/* EXPLORE MORE */}
           </button>
         </div>
       </section>
 
       {/* Services Section */}
       <section
-        className={`relative bg-gray-100 py-20 px-6 md:px-12 lg:px-24 ${
-          services?.length <= 2 ? "flex justify-center items-center" : ""
-        }`}
+        className={`relative bg-gray-100 py-20 px-6 md:px-12 lg:px-24 ${services?.length <= 2 ? "flex justify-center items-center" : ""
+          }`}
       >
         <div className="container mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-purple-800">Our Services</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-purple-800">
+            Onze diensten{/* Our Services */}
+          </h2>
           <div
-            className={`grid ${services?.length <= 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-3"} gap-12`}
+            className='flex flex-wrap gap-8 justify-center'
           >
             {services?.map((service, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-lg text-center">
+              <div key={index} className="bg-white w-[25em] p-8 rounded-lg shadow-lg text-center">
                 <img
                   src={images[index % images.length] || "https://via.placeholder.com/600x400?text=Service+Image"} // Updated default image
                   alt={`Service ${index + 1}`}
@@ -151,12 +146,13 @@ function Template7({ data }) {
       {/* Testimonial Section */}
       <section className="bg-gradient-to-r from-purple-500 to-pink-500 py-20 px-4 md:px-12 lg:px-24">
         <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-4 text-white">
-        What Our Clients Say
-      </h2>
-          <div className={`flex ${testimonials?.length < 3 ? "justify-center" : "justify-between"} flex-wrap gap-12`}>
+          <h2 className="text-3xl font-bold mb-4 text-white">
+            Wat onze klanten zeggen
+            {/* What Our Clients Say */}
+          </h2>
+          <div className='flex flex-wrap gap-8 justify-center'>
             {testimonials?.map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-lg relative w-full md:w-1/3">
+              <div key={index} className="bg-white p-8 rounded-lg shadow-lg relative w-full md:w-1/3 mt-10">
                 <div className="flex justify-center -mt-16">
                   <img
                     src={images[index % images.length] || "https://via.placeholder.com/600x400?text=Testimonial+Image"} // Updated default image
@@ -181,20 +177,20 @@ function Template7({ data }) {
           <p className="text-gray-600 mb-4">{footer?.description}</p>
           <div className="flex justify-center mt-6 space-x-6">
             {[{ icon: <FaFacebook size={28} />, link: "https://facebook.com" },
-              { icon: <FaTwitter size={28} />, link: "https://twitter.com" },
-              { icon: <FaInstagram size={28} />, link: "https://instagram.com" },
-              { icon: <FaLinkedin size={28} />, link: "https://linkedin.com" },
+            { icon: <FaTwitter size={28} />, link: "https://twitter.com" },
+            { icon: <FaInstagram size={28} />, link: "https://instagram.com" },
+            { icon: <FaLinkedin size={28} />, link: "https://linkedin.com" },
             ].map(({ icon, link }, index) => (
               <a key={index} href={link} className="text-blue-800 hover:text-gray-600">
                 {icon}
               </a>
             ))}
           </div>
-          <p className="text-center mt-6">&copy; {new Date().getFullYear()} {companyName}. All rights reserved.</p>
+          <p className="text-center mt-6">&copy; {new Date().getFullYear()} {companyName}. Alle rechten voorbehouden.</p>
         </div>
       </footer>
     </div>
   );
 }
 
-export default Template7;
+export default Template4;

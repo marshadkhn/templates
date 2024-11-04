@@ -8,7 +8,7 @@ import {
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const Template4 = ({ data }) => {
+const Template1 = ({ data }) => {
   const [open, setOpen] = useState(false);
   // Destructure data prop
   const {
@@ -26,13 +26,7 @@ const Template4 = ({ data }) => {
       <nav className="bg-white p-6 font-poppins">
         <div className="flex justify-between items-center max-w-7xl mx-auto flex-wrap">
           {/* Nav Logo */}
-          <div className="flex-shrink-0">
-            <img
-              src={logo || "https://via.placeholder.com/150"}
-              alt={`${companyName} Logo`}
-              className="h-12 lg:h-16"
-            />
-          </div>
+          <h1 className="flex-1 text-2xl font-semibold text-black">{companyName}</h1>
 
           {/* Hamburger Menu for Mobile */}
           <div className="lg:hidden">
@@ -46,11 +40,10 @@ const Template4 = ({ data }) => {
 
           {/* Nav Items */}
           <ul
-            className={`${
-              open ? "block" : "hidden"
-            } w-full lg:w-auto lg:flex space-y-4 lg:space-y-0 lg:space-x-8 mt-4 lg:mt-0 flex-wrap`}
+            className={`${open ? "block" : "hidden"
+              } w-full lg:w-auto lg:flex space-y-4 lg:space-y-0 lg:space-x-8 mt-4 lg:mt-0 justify-center flex-wrap flex-1`}
           >
-            {["About", "Services", "Testimonials", "Contact"].map((item) => (
+            {["Over", "Diensten", "Getuigenissen", "Contact"].map((item) => (
               <li key={item}>
                 <a
                   href={`#${item.toLowerCase()}`}
@@ -64,9 +57,8 @@ const Template4 = ({ data }) => {
 
           {/* Nav Social Icons */}
           <div
-            className={`${
-              open ? "flex" : "hidden"
-            } w-full flex-row lg:w-auto lg:flex space-x-4 lg:space-y-0 mt-4 lg:mt-0 justify-center`}
+            className={`${open ? "flex" : "hidden"
+              } flex-row lg:w-auto lg:flex space-x-4 lg:space-y-0 mt-4 lg:mt-0 justify-end flex-1`}
           >
             {[
               {
@@ -98,7 +90,7 @@ const Template4 = ({ data }) => {
       <div
         className="relative text-left py-20 bg-gray-900 bg-cover bg-center min-h-[70vh] flex items-center justify-center"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1444676632488-26a136c45b9b?q=80&w=1937&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+          backgroundImage: `url(${images[0] || "https://via.placeholder.com/1200x800"})`
         }}
       >
         {/* Black Overlay for better text visibility */}
@@ -111,19 +103,17 @@ const Template4 = ({ data }) => {
 
           {/* Heading */}
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Welcome to Your Future
+            {content.hero.title}
           </h1>
 
           {/* Paragraph */}
           <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-            Discover endless possibilities with our platform. We provide the
-            tools and solutions to help you achieve your dreams, no matter the
-            challenge.
+            {content.hero.description}
           </p>
 
           {/* Button */}
           <button className="px-8 py-4 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105">
-            Get Started
+            Aan de slag{/* Get Started */}
           </button>
         </div>
       </div>
@@ -135,7 +125,7 @@ const Template4 = ({ data }) => {
           {Array.from({ length: 4 }).map((_, index) => (
             <img
               key={index}
-              src={`https://images.unsplash.com/photo-1511452885600-a3d2c9148a31`}
+              src={images[index + 1] || "https://via.placeholder.com/1200x800"}
               alt={`Image ${index + 1}`}
               className="w-full h-40 object-cover rounded-lg transition-transform transform hover:scale-105 shadow-md"
               loading="lazy"
@@ -146,7 +136,9 @@ const Template4 = ({ data }) => {
         {/* Second Half: Content */}
         <div className="md:w-1/2 p-6 flex flex-col justify-center">
           <p className="text-gray-600 mb-2 font-medium">{companyName}</p>
-          <h2 className="text-3xl font-bold mb-4 text-black">About Us</h2>
+          <h2 className="text-3xl font-bold mb-4 text-black">
+            Over ons{/* About Us */}
+          </h2>
           <p className="text-gray-700 mb-4">{content.aboutUs.description}</p>
           <button className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow hover:bg-blue-700 transition duration-200 transform hover:scale-105">
             Click Me
@@ -158,50 +150,22 @@ const Template4 = ({ data }) => {
       <div className="bg-gradient-to-r from-[#f0f4f8] to-[#e6effa] flex items-center justify-center min-h-screen mt-32 py-10">
         <div className="w-full max-w-4xl p-6 text-center">
           <p className="text-gray-700 mb-4">
-            Discover our wide range of services designed to cater to your needs
+            Ontdek ons ​​brede scala aan diensten die zijn ontworpen om aan uw behoeften te voldoen
+            {/* Discover our wide range of services designed to cater to your needs */}
           </p>
           <h2 className="text-3xl font-bold mb-6 text-blue-800">
-            Our Services
+            Onze diensten{/* Our Services */}
           </h2>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 mt-6">
-            {[
-              {
-                imageUrl:
-                  "https://images.unsplash.com/photo-1511452885600-a3d2c9148a31",
-                title: "Service One",
-                description:
-                  "This service provides innovative solutions tailored to your needs.",
-              },
-              {
-                imageUrl:
-                  "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
-                title: "Service Two",
-                description:
-                  "Expert consultation to help you navigate your challenges effectively.",
-              },
-              {
-                imageUrl:
-                  "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
-                title: "Service Three",
-                description:
-                  "Comprehensive support to optimize your business processes.",
-              },
-              {
-                imageUrl:
-                  "https://images.unsplash.com/photo-1512428559087-560fa5ceab42",
-                title: "Service Four",
-                description:
-                  "Creative strategies to enhance your brand's visibility.",
-              },
-            ].map((service, index) => (
+          <div className="flex flex-wrap gap-8 justify-center">
+            {content.services.map((service, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center border border-gray-200 rounded-lg shadow-md bg-white transition-transform transform hover:scale-105 hover:shadow-xl overflow-hidden"
+                className="flex flex-col items-center justify-center w-[400px] border border-gray-200 rounded-lg shadow-md bg-white transition-transform transform hover:scale-105 hover:shadow-xl overflow-hidden"
               >
                 <img
-                  src={service.imageUrl}
+                  src={images[index + 1] || "https://via.placeholder.com/1200x800"}
                   alt={`Image ${index + 1}`}
                   className="w-full h-40 object-cover rounded-t-lg transition-transform duration-200"
                   loading="lazy"
@@ -212,7 +176,7 @@ const Template4 = ({ data }) => {
                   </h3>
                   <p className="text-gray-600 mb-4">{service.description}</p>
                   <button className="mt-2 bg-blue-600 text-white py-2 px-4 rounded-md shadow hover:bg-blue-700 transition duration-200">
-                    Learn More
+                    Meer informatie{/* Learn More */}
                   </button>
                 </div>
               </div>
@@ -224,11 +188,12 @@ const Template4 = ({ data }) => {
       {/* Testimonial section*/}
       <div className="w-full max-w-4xl mx-auto p-6 text-center mt-32 bg-gradient-to-r from-blue-500 to-blue-300 rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold mb-4 text-white">
-          What Our Clients Say
+          Wat onze klanten zeggen
+          {/* What Our Clients Say */}
         </h2>
         <p className="text-gray-100 mb-6">
-          We value feedback from our clients. Here are some of the kind words
-          they’ve shared about our services.
+          We waarderen feedback van onze klanten. Hier zijn enkele van de vriendelijke woorden die ze over onze diensten hebben gedeeld.
+          {/* We value feedback from our clients. Here are some of the kind words they’ve shared about our services. */}
         </p>
 
         {/* Testimonial Carousel */}
@@ -274,59 +239,23 @@ const Template4 = ({ data }) => {
 
       {/* Our Team section*/}
       <div className="w-full max-w-4xl mx-auto p-6 mt-32 text-center">
-        <h2 className="text-3xl font-bold mb-4 text-blue-800">Meet Our Team</h2>
+        <h2 className="text-3xl font-bold mb-4 text-blue-800">
+          Maak kennis met ons team{/* Meet Our Team */}
+        </h2>
         <p className="text-gray-700 mb-6">
-          Our team is comprised of dedicated professionals who are passionate
-          about what they do. We work together to provide the best service and
-          solutions for our clients.
+          Ons team bestaat uit toegewijde professionals die gepassioneerd zijn over wat ze doen. We werken samen om de beste service en oplossingen voor onze klanten te bieden.
+          {/* Our team is comprised of dedicated professionals who are passionate about what they do. We work together to provide the best service and solutions for our clients. */}
         </p>
 
         {/* Team Member Boxes */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {[
-            {
-              imgUrl:
-                "https://images.unsplash.com/photo-1531314888229-c4b4682c3118?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Alex Johnson",
-              designation: "Project Manager",
-            },
-            {
-              imgUrl:
-                "https://images.unsplash.com/photo-1542385262-cdf06b302c2c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Jordan Lee",
-              designation: "Software Engineer",
-            },
-            {
-              imgUrl:
-                "https://images.unsplash.com/photo-1526413232644-8a40f03cc03b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Taylor Smith",
-              designation: "UX Designer",
-            },
-            {
-              imgUrl:
-                "https://images.unsplash.com/photo-1461935793258-ac2ac2c930b2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Morgan Brown",
-              designation: "Content Strategist",
-            },
-            {
-              imgUrl:
-                "https://images.unsplash.com/photo-1518611540400-6b85a0704342?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Jamie Fox",
-              designation: "Marketing Specialist",
-            },
-            {
-              imgUrl:
-                "https://images.unsplash.com/photo-1519713880332-91cfe19a59dd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Chris Taylor",
-              designation: "Data Analyst",
-            },
-          ].map((member, index) => (
+        <div className="flex flex-wrap gap-8 justify-center">
+          {content.ourTeam.map((member, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center border border-gray-300 p-4 rounded-lg bg-white shadow-md transition-transform transform hover:scale-105 hover:shadow-xl"
+              className="flex flex-col items-center justify-center w-[250px] border border-gray-300 p-4 rounded-lg bg-white shadow-md transition-transform transform hover:scale-105 hover:shadow-xl"
             >
               <img
-                src={member.imgUrl}
+                src="https://images.unsplash.com/photo-1519713880332-91cfe19a59dd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt={member.name}
                 className="w-32 h-32 rounded-full border-4 border-blue-200 mb-3 object-cover"
               />
@@ -347,34 +276,36 @@ const Template4 = ({ data }) => {
           {/* Company Info Column */}
           <div className="flex flex-col">
             <h4 className="text-lg font-semibold mb-4 border-b-2 border-blue-500 pb-2">
-              Company Info
+              {content.footer.title}
             </h4>
             <p className="mb-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              {content.footer.content}
             </p>
-            <p className="mb-2">1234 Street Name, City, State, 12345</p>
+            <p className="mb-2">
+              1234 Straatnaam, Stad, Staat, 12345{/* 1234 Street Name, City, State, 12345 */}
+            </p>
             <p className="mb-2">
               Email:{" "}
               <a
                 href="mailto:info@yourcompany.com"
                 className="text-blue-400 hover:underline"
               >
-                info@yourcompany.com
+                {email}
               </a>
             </p>
             <p className="mb-2">
-              Phone: <span className="text-blue-400">(123) 456-7890</span>
+              {/* Phone:  */}
+              Telefoon: <span className="text-blue-400">{phoneNo}</span>
             </p>
           </div>
 
           {/* Quick Links Column */}
           <div>
             <h4 className="text-lg font-semibold mb-4 border-b-2 border-blue-500 pb-2">
-              Quick Links
+              Snelle links{/* Quick Links */}
             </h4>
             <ul className="space-y-2">
-              {["Home", "About Us", "Services", "Contact", "FAQ"].map(
+              {["Home", "Over ons", "Diensten", "Contact", "FAQ"].map(
                 (link) => (
                   <li key={link}>
                     <a
@@ -392,22 +323,16 @@ const Template4 = ({ data }) => {
           {/* Services Column */}
           <div>
             <h4 className="text-lg font-semibold mb-4 border-b-2 border-blue-500 pb-2">
-              Our Services
+              Onze diensten{/* Our Services */}
             </h4>
             <ul className="space-y-2">
-              {[
-                "Consulting",
-                "Web Development",
-                "Design",
-                "SEO Services",
-                "Digital Marketing",
-              ].map((service) => (
-                <li key={service}>
+              {content.services.map((service) => (
+                <li key={service.title}>
                   <a
                     href="#"
                     className="hover:text-blue-400 transition duration-200"
                   >
-                    {service}
+                    {service.title}
                   </a>
                 </li>
               ))}
@@ -417,20 +342,21 @@ const Template4 = ({ data }) => {
           {/* Newsletter Subscription Column */}
           <div className="md:col-span-1">
             <h4 className="text-lg font-semibold mb-4 border-b-2 border-blue-500 pb-2">
-              Stay Connected
+              Blijf verbonden{/* Stay Connected */}
             </h4>
             <p className="mb-4">
-              Subscribe to our newsletter for the latest updates and offers.
+              Abonneer u op onze nieuwsbrief voor de laatste updates en aanbiedingen.
+              {/* Subscribe to our newsletter for the latest updates and offers. */}
             </p>
             <div className="flex flex-col sm:flex-row justify-center mb-4">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Voer uw e-mailadres in" // Enter you email
                 className="p-2 rounded-l border border-gray-400 mb-2 sm:mb-0 sm:mr-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
               <button className="bg-blue-600 text-white px-4 rounded sm:rounded-r hover:bg-blue-700 transition duration-200">
-                Subscribe
+                Abonneren{/* Subscribe */}
               </button>
             </div>
           </div>
@@ -450,11 +376,11 @@ const Template4 = ({ data }) => {
         </div>
 
         <p className="mt-4 text-sm text-center border-t border-gray-700 pt-4">
-          © 2024 Your Company. All rights reserved.
+          © 2024 Uw Bedrijf. Alle rechten voorbehouden.{/* © 2024 Your Company. All rights reserved. */}
         </p>
       </footer>
     </div>
   );
 };
 
-export default Template4;
+export default Template1;
