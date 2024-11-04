@@ -113,7 +113,7 @@ function Template2({ data }) {
       {/* About Us Section */}
       <div className="w-full max-w-4xl mx-auto my-10 flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="md:w-1/2 p-4 grid grid-cols-2 gap-4">
-          {images.map((image, index) => (
+          {images.slice(1, 5).map((image, index) => (
             <img
               key={index}
               src={images[index + 1] || "https://via.placeholder.com/1200x800"}
