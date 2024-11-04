@@ -3,13 +3,18 @@ import {
   FaFacebookSquare,
   FaTwitterSquare,
   FaInstagramSquare,
-  FaBars
+  FaBars,
+  FaQuoteLeft,
+  FaQuoteRight,
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedin,
 } from "react-icons/fa";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const Template4 = ({ data }) => {
+function Template7({ data }) {
   const [open, setOpen] = useState(false);
+
   // Destructure data prop
   const {
     companyName,
@@ -20,15 +25,18 @@ const Template4 = ({ data }) => {
     images = [],
   } = data || {};
 
+  // Extracting dynamic data from the content prop
+  const { hero, aboutUs, services, testimonials, footer } = content || {};
+
   return (
-    <div className="bg-white text-white">
+    <div className="bg-white text-black">
       {/* Navbar */}
-      <nav className="bg-white p-6 font-poppins">
+      <nav className="bg-white p-6 font-poppins shadow-2xl shadow-black">
         <div className="flex justify-between items-center max-w-7xl mx-auto flex-wrap">
           {/* Nav Logo */}
           <div className="flex-shrink-0">
             <img
-              src={logo || "https://via.placeholder.com/150"}
+              src={logo}
               alt={`${companyName} Logo`}
               className="h-12 lg:h-16"
             />
@@ -68,25 +76,11 @@ const Template4 = ({ data }) => {
               open ? "flex" : "hidden"
             } w-full flex-row lg:w-auto lg:flex space-x-4 lg:space-y-0 mt-4 lg:mt-0 justify-center`}
           >
-            {[
-              {
-                icon: <FaFacebookSquare size={28} />,
-                link: "https://facebook.com",
-              },
-              {
-                icon: <FaTwitterSquare size={28} />,
-                link: "https://twitter.com",
-              },
-              {
-                icon: <FaInstagramSquare size={28} />,
-                link: "https://instagram.com",
-              },
+            {[{ icon: <FaFacebookSquare size={28} />, link: "https://facebook.com" },
+              { icon: <FaTwitterSquare size={28} />, link: "https://twitter.com" },
+              { icon: <FaInstagramSquare size={28} />, link: "https://instagram.com" },
             ].map(({ icon, link }, index) => (
-              <a
-                key={index}
-                href={link}
-                className="text-black hover:text-gray-600"
-              >
+              <a key={index} href={link} className="text-black hover:text-gray-600">
                 {icon}
               </a>
             ))}
@@ -95,366 +89,112 @@ const Template4 = ({ data }) => {
       </nav>
 
       {/* Hero Section */}
-      <div
-        className="relative text-left py-20 bg-gray-900 bg-cover bg-center min-h-[70vh] flex items-center justify-center"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1444676632488-26a136c45b9b?q=80&w=1937&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
-        }}
-      >
-        {/* Black Overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-
-        {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          {/* Line (divider or stylistic element) */}
-          <hr className="border-t-4 border-white w-24 mb-4 mx-auto" />
-
-          {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Welcome to Your Future
-          </h1>
-
-          {/* Paragraph */}
-          <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-            Discover endless possibilities with our platform. We provide the
-            tools and solutions to help you achieve your dreams, no matter the
-            challenge.
-          </p>
-
-          {/* Button */}
-          <button className="px-8 py-4 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105">
-            Get Started
-          </button>
-        </div>
-      </div>
-
-      {/* About Us   */}
-      <div className="w-full max-w-4xl mx-auto mt-10 flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden">
-        {/* First Half: Image Grid */}
-        <div className="md:w-1/2 p-4 grid grid-cols-2 gap-4">
-          {Array.from({ length: 4 }).map((_, index) => (
+      <section className="bg-gray-100 py-16 px-4 md:px-8 lg:px-12">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="order-2 md:order-1">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{hero?.title}</h2>
+            <p className="text-gray-600 mb-6">{hero?.description}</p>
+            <button className="bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 mb-4 md:mb-0">
+              Discover More
+            </button>
+          </div>
+          <div className="order-1 md:order-2 relative">
             <img
-              key={index}
-              src={`https://images.unsplash.com/photo-1511452885600-a3d2c9148a31`}
-              alt={`Image ${index + 1}`}
-              className="w-full h-40 object-cover rounded-lg transition-transform transform hover:scale-105 shadow-md"
-              loading="lazy"
+              src={images[0] || "https://via.placeholder.com/600x400?text=Hero+Image"} // Updated default image
+              alt="Hero Image"
+              className="rounded-lg shadow-lg w-full h-full object-cover mb-4"
             />
-          ))}
+            <div className="absolute top-2 right-2 bg-white p-4 rounded-lg shadow-md">
+              <p className="text-blue-600 text-sm font-semibold">20+ Years Of Experience</p>
+            </div>
+          </div>
         </div>
+      </section>
 
-        {/* Second Half: Content */}
-        <div className="md:w-1/2 p-6 flex flex-col justify-center">
-          <p className="text-gray-600 mb-2 font-medium">{companyName}</p>
-          <h2 className="text-3xl font-bold mb-4 text-black">About Us</h2>
-          <p className="text-gray-700 mb-4">{content.aboutUs.description}</p>
-          <button className="bg-blue-600 text-white py-3 px-6 rounded-lg shadow hover:bg-blue-700 transition duration-200 transform hover:scale-105">
-            Click Me
+      {/* About Us Section */}
+      <section className="bg-purple-50 py-20 px-6 md:px-12 lg:px-24">
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-purple-800">A BIT ABOUT US</h2>
+          <p className="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">{aboutUs?.description}</p>
+          <button className="bg-purple-600 text-white py-3 px-8 rounded-full hover:bg-purple-700 transition duration-300">
+            EXPLORE MORE
           </button>
         </div>
-      </div>
+      </section>
 
-      {/* Service section */}
-      <div className="bg-gradient-to-r from-[#f0f4f8] to-[#e6effa] flex items-center justify-center min-h-screen mt-32 py-10">
-        <div className="w-full max-w-4xl p-6 text-center">
-          <p className="text-gray-700 mb-4">
-            Discover our wide range of services designed to cater to your needs
-          </p>
-          <h2 className="text-3xl font-bold mb-6 text-blue-800">
-            Our Services
-          </h2>
-
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 mt-6">
-            {[
-              {
-                imageUrl:
-                  "https://images.unsplash.com/photo-1511452885600-a3d2c9148a31",
-                title: "Service One",
-                description:
-                  "This service provides innovative solutions tailored to your needs.",
-              },
-              {
-                imageUrl:
-                  "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
-                title: "Service Two",
-                description:
-                  "Expert consultation to help you navigate your challenges effectively.",
-              },
-              {
-                imageUrl:
-                  "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
-                title: "Service Three",
-                description:
-                  "Comprehensive support to optimize your business processes.",
-              },
-              {
-                imageUrl:
-                  "https://images.unsplash.com/photo-1512428559087-560fa5ceab42",
-                title: "Service Four",
-                description:
-                  "Creative strategies to enhance your brand's visibility.",
-              },
-            ].map((service, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center justify-center border border-gray-200 rounded-lg shadow-md bg-white transition-transform transform hover:scale-105 hover:shadow-xl overflow-hidden"
-              >
+      {/* Services Section */}
+      <section
+        className={`relative bg-gray-100 py-20 px-6 md:px-12 lg:px-24 ${
+          services?.length <= 2 ? "flex justify-center items-center" : ""
+        }`}
+      >
+        <div className="container mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-purple-800">Our Services</h2>
+          <div
+            className={`grid ${services?.length <= 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-3"} gap-12`}
+          >
+            {services?.map((service, index) => (
+              <div key={index} className="bg-white p-8 rounded-lg shadow-lg text-center">
                 <img
-                  src={service.imageUrl}
-                  alt={`Image ${index + 1}`}
-                  className="w-full h-40 object-cover rounded-t-lg transition-transform duration-200"
-                  loading="lazy"
+                  src={images[index % images.length] || "https://via.placeholder.com/600x400?text=Service+Image"} // Updated default image
+                  alt={`Service ${index + 1}`}
+                  className="w-full h-48 object-cover rounded-t-lg mb-4"
                 />
-                <div className="p-6 text-left">
-                  <h3 className="text-xl font-semibold mb-2 text-blue-600">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
-                  <button className="mt-2 bg-blue-600 text-white py-2 px-4 rounded-md shadow hover:bg-blue-700 transition duration-200">
-                    Learn More
-                  </button>
-                </div>
+                <h3 className="text-xl font-semibold mb-2 text-purple-800">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Testimonial section*/}
-      <div className="w-full max-w-4xl mx-auto p-6 text-center mt-32 bg-gradient-to-r from-blue-500 to-blue-300 rounded-lg shadow-lg">
+      {/* Testimonial Section */}
+      <section className="bg-gradient-to-r from-purple-500 to-pink-500 py-20 px-4 md:px-12 lg:px-24">
+        <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4 text-white">
-          What Our Clients Say
-        </h2>
-        <p className="text-gray-100 mb-6">
-          We value feedback from our clients. Here are some of the kind words
-          they’ve shared about our services.
-        </p>
-
-        {/* Testimonial Carousel */}
-        <Carousel
-          showArrows={true}
-          showThumbs={false}
-          infiniteLoop={true}
-          autoPlay={true}
-          interval={5000}
-          stopOnHover={true}
-          showStatus={false}
-          className="rounded-lg overflow-hidden"
-        >
-          {content.testimonials.map((client, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center border border-white p-6 bg-white rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl"
-            >
-              <h3 className="text-lg font-semibold mb-1 text-gray-800">
-                {client.name}
-              </h3>
-              <div className="flex mb-2">
-                {Array.from({ length: 5 }).map((_, starIndex) => (
-                  <svg
-                    key={starIndex}
-                    className="w-5 h-5 text-yellow-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M10 15.27L16.18 19l-1.64-7.03L19 8.24l-7.19-.61L10 1 8.19 7.63 1 8.24l5.46 3.73L5.82 19z" />
-                  </svg>
-                ))}
+        What Our Clients Say
+      </h2>
+          <div className={`flex ${testimonials?.length < 3 ? "justify-center" : "justify-between"} flex-wrap gap-12`}>
+            {testimonials?.map((testimonial, index) => (
+              <div key={index} className="bg-white p-8 rounded-lg shadow-lg relative w-full md:w-1/3">
+                <div className="flex justify-center -mt-16">
+                  <img
+                    src={images[index % images.length] || "https://via.placeholder.com/600x400?text=Testimonial+Image"} // Updated default image
+                    alt={testimonial.name}
+                    className="w-32 h-32 object-cover rounded-full border-4 border-white shadow-lg"
+                  />
+                </div>
+                <FaQuoteLeft className="text-purple-600 text-3xl mb-4" />
+                <p className="text-gray-700 mb-4">{testimonial.review}</p>
+                <h3 className="text-xl font-semibold mt-4 text-purple-800">{testimonial.name}</h3>
+                <FaQuoteRight className="text-purple-600 text-3xl ml-auto" />
               </div>
-              <p className="text-gray-600 text-center italic mb-2">
-                "{client.review}"
-              </p>
-              <p className="text-gray-500">- {client.name}</p>
-            </div>
-          ))}
-        </Carousel>
-      </div>
-
-      {/* Our Team section*/}
-      <div className="w-full max-w-4xl mx-auto p-6 mt-32 text-center">
-        <h2 className="text-3xl font-bold mb-4 text-blue-800">Meet Our Team</h2>
-        <p className="text-gray-700 mb-6">
-          Our team is comprised of dedicated professionals who are passionate
-          about what they do. We work together to provide the best service and
-          solutions for our clients.
-        </p>
-
-        {/* Team Member Boxes */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {[
-            {
-              imgUrl:
-                "https://images.unsplash.com/photo-1531314888229-c4b4682c3118?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Alex Johnson",
-              designation: "Project Manager",
-            },
-            {
-              imgUrl:
-                "https://images.unsplash.com/photo-1542385262-cdf06b302c2c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Jordan Lee",
-              designation: "Software Engineer",
-            },
-            {
-              imgUrl:
-                "https://images.unsplash.com/photo-1526413232644-8a40f03cc03b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Taylor Smith",
-              designation: "UX Designer",
-            },
-            {
-              imgUrl:
-                "https://images.unsplash.com/photo-1461935793258-ac2ac2c930b2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Morgan Brown",
-              designation: "Content Strategist",
-            },
-            {
-              imgUrl:
-                "https://images.unsplash.com/photo-1518611540400-6b85a0704342?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Jamie Fox",
-              designation: "Marketing Specialist",
-            },
-            {
-              imgUrl:
-                "https://images.unsplash.com/photo-1519713880332-91cfe19a59dd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Chris Taylor",
-              designation: "Data Analyst",
-            },
-          ].map((member, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center border border-gray-300 p-4 rounded-lg bg-white shadow-md transition-transform transform hover:scale-105 hover:shadow-xl"
-            >
-              <img
-                src={member.imgUrl}
-                alt={member.name}
-                className="w-32 h-32 rounded-full border-4 border-blue-200 mb-3 object-cover"
-              />
-              <h3 className="text-lg font-semibold mb-1 text-blue-600">
-                {member.name}
-              </h3>
-              <p className="text-sm font-bold text-gray-700 mb-1">
-                {member.designation}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 mt-10">
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
-          {/* Company Info Column */}
-          <div className="flex flex-col">
-            <h4 className="text-lg font-semibold mb-4 border-b-2 border-blue-500 pb-2">
-              Company Info
-            </h4>
-            <p className="mb-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <p className="mb-2">1234 Street Name, City, State, 12345</p>
-            <p className="mb-2">
-              Email:{" "}
-              <a
-                href="mailto:info@yourcompany.com"
-                className="text-blue-400 hover:underline"
-              >
-                info@yourcompany.com
+      <footer className="bg-white text-blue-800 py-16 px-4 sm:px-8 md:px-12 lg:px-24">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{footer?.title}</h2>
+          <p className="text-gray-600 mb-4">{footer?.description}</p>
+          <div className="flex justify-center mt-6 space-x-6">
+            {[{ icon: <FaFacebook size={28} />, link: "https://facebook.com" },
+              { icon: <FaTwitter size={28} />, link: "https://twitter.com" },
+              { icon: <FaInstagram size={28} />, link: "https://instagram.com" },
+              { icon: <FaLinkedin size={28} />, link: "https://linkedin.com" },
+            ].map(({ icon, link }, index) => (
+              <a key={index} href={link} className="text-blue-800 hover:text-gray-600">
+                {icon}
               </a>
-            </p>
-            <p className="mb-2">
-              Phone: <span className="text-blue-400">(123) 456-7890</span>
-            </p>
+            ))}
           </div>
-
-          {/* Quick Links Column */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 border-b-2 border-blue-500 pb-2">
-              Quick Links
-            </h4>
-            <ul className="space-y-2">
-              {["Home", "About Us", "Services", "Contact", "FAQ"].map(
-                (link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="hover:text-blue-400 transition duration-200"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
-
-          {/* Services Column */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 border-b-2 border-blue-500 pb-2">
-              Our Services
-            </h4>
-            <ul className="space-y-2">
-              {[
-                "Consulting",
-                "Web Development",
-                "Design",
-                "SEO Services",
-                "Digital Marketing",
-              ].map((service) => (
-                <li key={service}>
-                  <a
-                    href="#"
-                    className="hover:text-blue-400 transition duration-200"
-                  >
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Newsletter Subscription Column */}
-          <div className="md:col-span-1">
-            <h4 className="text-lg font-semibold mb-4 border-b-2 border-blue-500 pb-2">
-              Stay Connected
-            </h4>
-            <p className="mb-4">
-              Subscribe to our newsletter for the latest updates and offers.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center mb-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="p-2 rounded-l border border-gray-400 mb-2 sm:mb-0 sm:mr-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-              <button className="bg-blue-600 text-white px-4 rounded sm:rounded-r hover:bg-blue-700 transition duration-200">
-                Subscribe
-              </button>
-            </div>
-          </div>
+          <p className="text-center mt-6">&copy; {new Date().getFullYear()} {companyName}. All rights reserved.</p>
         </div>
-
-        {/* Social Media Links */}
-        <div className="flex justify-center space-x-6 mb-4 mt-8">
-          {["Facebook", "Twitter", "LinkedIn", "Instagram"].map((platform) => (
-            <a
-              key={platform}
-              href="#"
-              className="hover:text-blue-400 transition duration-200"
-            >
-              {platform}
-            </a>
-          ))}
-        </div>
-
-        <p className="mt-4 text-sm text-center border-t border-gray-700 pt-4">
-          © 2024 Your Company. All rights reserved.
-        </p>
       </footer>
     </div>
   );
-};
+}
 
-export default Template4;
+export default Template7;
