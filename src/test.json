@@ -4,14 +4,13 @@
     "phoneNo": "2347828282",
     "email": "info@uwork.nu",
     "logo": "https://www.logo.wine/a/logo/Nvidia/Nvidia-Logo.wine.svg",
-    "images": [
-        "https://via.placeholder.com/1200x800",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
-        
+    "images":[
+        "https://via.placeholder.com/150/FF5733/FFFFFF",
+        "https://via.placeholder.com/150/33FF57/FFFFFF",
+        "https://via.placeholder.com/150/3357FF/FFFFFF",
+        "https://via.placeholder.com/150/FF33A1/FFFFFF",
+        "https://via.placeholder.com/150/A133FF/FFFFFF",
+        "https://via.placeholder.com/150/33FFA1/FFFFFF"
     ],
     "content": {
         "contact_information": {
