@@ -269,7 +269,7 @@ function Template3({ data }) {
             <h3 className="font-bold text-lg">
               Contacteer ons{/* Contact Us */}
             </h3>
-            <p className="text-gray-600">{phoneNo}</p>
+            {phoneNo && <p className="text-gray-600">{phoneNo}</p>}
             <p className="text-gray-600">{email}</p>
           </div>
         </div>

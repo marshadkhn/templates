@@ -293,10 +293,10 @@ const Template1 = ({ data }) => {
                 {email}
               </a>
             </p>
-            <p className="mb-2">
+            {phoneNo && <p className="mb-2">
               {/* Phone:  */}
               Telefoon: <span className="text-blue-400">{phoneNo}</span>
-            </p>
+            </p>}
           </div>
 
           {/* Quick Links Column */}
