@@ -2,7 +2,7 @@ import React from "react";
 
 export default function USP({ uspContent, businessName, niche }) {
   return (
-    <section id="usps" className="mb-24 mt-24 bg-white px-6 md:px-24">
+    <section id="usps" className="mb-36 bg-white px-6 md:px-24">
       <div className="container mx-auto">
         <h2 className="mb-16 text-left text-3xl font-extrabold text-gray-800 md:text-4xl">
           USP’s <span className="text-orange-500">{businessName}</span>

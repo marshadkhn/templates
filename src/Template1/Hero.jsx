@@ -4,7 +4,7 @@ export default function Hero({ niche, images }) {
   return (
     <section
       id="hero"
-      className="hero-section relative flex h-screen items-center bg-cover bg-center text-white"
+      className="hero-section relative mb-36 flex h-screen items-center bg-cover bg-center text-white"
       style={{
         backgroundImage: `url(${
           images[0] || "https://via.placeholder.com/1200x800"

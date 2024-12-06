@@ -4,7 +4,7 @@ export default function Working({ businessName }) {
   return (
     <section
       id="job"
-      className="mb-36 flex flex-col items-center justify-center"
+      className="mb-40 flex flex-col items-center justify-center"
     >
       <h1 className="text-5xl text-black">
         Werken bij <span className="text-orange-500">{businessName}</span>?

@@ -4,7 +4,7 @@ export default function Services({ images }) {
   return (
     <section
       id="service"
-      className="bg-gradient-to-r from-blue-100 to-blue-200 py-16"
+      className="mb-36 bg-gradient-to-r from-blue-100 to-blue-200 py-36"
     >
       <div className="container mx-auto px-6 text-center md:px-24">
         <div className="mx-auto mb-12 max-w-3xl">

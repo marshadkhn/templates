@@ -9,7 +9,7 @@ import React from "react";
 
 export default function Footer({ businessName, emailBusiness }) {
   return (
-    <footer id="footer" className="bg-black/80 py-10 text-white">
+    <footer id="footer" className="bg-brown py-10 text-white">
       <div className="container mx-auto px-24">
         {/* Four Columns Layout */}
         <div className="grid grid-cols-1 gap-20 sm:grid-cols-2 lg:grid-cols-4">

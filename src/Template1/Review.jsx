@@ -4,9 +4,9 @@ import profilePic from "../../src/assets/Images/profilePic.png";
 
 export default function Review({ businessName, reviews }) {
   return (
-    <section id="review" className="bg-white py-12">
+    <section id="review" className="mb-36 bg-white">
       <div className="container mx-auto px-24">
-        <div className="mt-8 flex items-center justify-between px-6">
+        <div className="flex items-center justify-between px-6">
           <h2 className="text-main-blue mb-8 text-center text-3xl font-bold">
             Reviews : <span className="text-orange-500"> {businessName}</span>
           </h2>
