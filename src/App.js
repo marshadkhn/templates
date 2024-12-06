@@ -9,9 +9,6 @@ function App() {
   return (
     <>
       <Template1 data={test} />
-      {/* <Template2 data={test} /> */}
-      {/* <Template3 data={test} /> */}
-      {/* <Template4 data={test} /> */}
     </>
   );
 }
