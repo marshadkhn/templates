@@ -10,7 +10,7 @@ export default function Review({ businessName, reviews }) {
           <h2 className="text-main-blue mb-8 text-center text-3xl font-bold">
             Reviews : <span className="text-orange-500"> {businessName}</span>
           </h2>
-          <button className="rounded-xl bg-orange-500 px-6 py-3 text-white hover:bg-orange-600">
+          <button className="rounded-full bg-neutral-400 px-6 py-4 text-white hover:bg-neutral-500">
             Bekijk alle reviews
           </button>
         </div>
