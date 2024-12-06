@@ -1,6 +1,6 @@
 import React from "react";
-import google from "../../src/assets/Images/google.png";
-import profilePic from "../../src/assets/Images/profilePic.png";
+import google from "../assets/Images/google.png";
+import profilePic from "../assets/Images/profilePic.png";
 
 export default function Review({ businessName, reviews }) {
   return (
