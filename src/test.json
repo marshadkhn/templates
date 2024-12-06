@@ -1,81 +1,87 @@
 {
-    "companyName": "U-Work Uitzendbureau",
-    "category": "Construction",
-    "phoneNo": "2347828282",
-    "email": "info@uwork.nu",
-    "logo": "https://www.logo.wine/a/logo/Nvidia/Nvidia-Logo.wine.svg",
-    "images":[
-        "https://via.placeholder.com/150/FF5733/FFFFFF",
-        "https://via.placeholder.com/150/33FF57/FFFFFF",
-        "https://via.placeholder.com/150/3357FF/FFFFFF",
-        "https://via.placeholder.com/150/FF33A1/FFFFFF",
-        "https://via.placeholder.com/150/A133FF/FFFFFF",
-        "https://via.placeholder.com/150/33FFA1/FFFFFF"
+  "niche": "software development agency",
+  "businessName": "EGMA",
+  "emailBusiness": "info@egma.in",
+  "images": [
+    "https://via.placeholder.com/150/FF5733/FFFFFF",
+    "https://via.placeholder.com/150/33FF57/FFFFFF",
+    "https://via.placeholder.com/150/3357FF/FFFFFF",
+    "https://via.placeholder.com/150/FF33A1/FFFFFF",
+    "https://via.placeholder.com/150/A133FF/FFFFFF",
+    "https://via.placeholder.com/150/33FFA1/FFFFFF"
+  ],
+  "content": {
+    "reviews": [
+      {
+        "name": "John Doe",
+        "review": "Great experience with EGMA, highly recommend their services!",
+        "rating": 5,
+        "profilePic": "john.jpg"
+      },
+      {
+        "name": "Jane Smith",
+        "review": "EGMA's team delivered an outstanding product. Very professional.",
+        "rating": 5,
+        "profilePic": "jane.jpg"
+      },
+      {
+        "name": "Bob Johnson",
+        "review": "Excellent customer service and quality work. Very satisfied!",
+        "rating": 5,
+        "profilePic": "bob.jpg"
+      }
     ],
-    "content": {
-        "contact_information": {
-            "Bedrijfsnaam": "EGMA",
-            "address": "123 Hoofdstraat, Amsterdam, Nederland",
-            "pictures_url": "https://egma.nl/projecten",
-            "website": "https://egma.nl",
-            "phone": "+31 20 123 4567"
-        },
-        "hero": {
-            "title": "Jouw Partner in Professionele Websites",
-            "description": "Bij EGMA creëren we websites die resultaten opleveren. Van ontwerp tot ontwikkeling, wij helpen je bedrijf online te laten groeien."
-        },
-        "aboutUs": {
-            "description": "EGMA is een toonaangevend webdesignbureau gevestigd in Amsterdam, gespecialiseerd in het bouwen van op maat gemaakte websites en digitale oplossingen. Ons team van experts staat klaar om jouw visie te verwezenlijken met innovatieve, effectieve en gebruiksvriendelijke websites."
-        },
-        "services": [
-            {
-                "title": "Webdesign",
-                "description": "Wij ontwerpen visueel aantrekkelijke websites die perfect aansluiten bij jouw merk en doelgroep."
-            },
-            {
-                "title": "Webdesign",
-                "description": "Wij ontwerpen visueel aantrekkelijke websites die perfect aansluiten bij jouw merk en doelgroep."
-            },
-            {
-                "title": "Webdesign",
-                "description": "Wij ontwerpen visueel aantrekkelijke websites die perfect aansluiten bij jouw merk en doelgroep."
-            }
-        ],
-        "testimonials": [
-            {
-                "name": "Sander de Vries",
-                "review": "EGMA heeft onze website compleet vernieuwd en het resultaat is verbluffend! Professioneel, efficiënt en klantgericht."
-            },
-            {
-                "name": "Sander de Vries",
-                "review": "EGMA heeft onze website compleet vernieuwd en het resultaat is verbluffend! Professioneel, efficiënt en klantgericht."
-            },
-            {
-                "name": "Lotte Jansen",
-                "review": "Vanaf het eerste gesprek wist EGMA precies wat wij zochten. Het team is deskundig en levert uitstekende service."
-            }
-        ],
-        "ourTeam": [
-            {
-                "name": "Jan Meijer",
-                "designation": "Hoofd Webontwerp"
-            },
-            {
-                "name": "Jan Meijer",
-                "designation": "Hoofd Webontwerp"
-            },
-            {
-                "name": "Jan Meijer",
-                "designation": "Hoofd Webontwerp"
-            },
-            {
-                "name": "Jan Meijer",
-                "designation": "Hoofd Webontwerp"
-            }
-        ],
-        "footer": {
-            "title": "Neem contact op met EGMA",
-            "content": "Benieuwd wat we voor jou kunnen betekenen? Neem vandaag nog contact met ons op via +31 20 123 4567 of bezoek ons op 123 Hoofdstraat, Amsterdam. Samen brengen we jouw online visie tot leven."
-        }
-    }
+    "uspContent": [
+      {
+        "number": 1,
+        "title": "USP 1",
+        "description": "We deliver cutting-edge software solutions tailored to your needs."
+      },
+      {
+        "number": 2,
+        "title": "USP 2",
+        "description": "Our team ensures seamless communication throughout the development process."
+      },
+      {
+        "number": 3,
+        "title": "USP 3",
+        "description": "We focus on delivering high-quality, scalable software that grows with your business."
+      }
+    ],
+    "photoContent": [
+      {
+        "id": 1,
+        "title": "Photo 1",
+        "description": "Our team working on a new project",
+        "imageUrl": "team1.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Photo 2",
+        "description": "Successful product launch event",
+        "imageUrl": "launch.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Photo 3",
+        "description": "Office space and collaborative environment",
+        "imageUrl": "office.jpg"
+      }
+    ],
+    "faqContent": [
+      {
+        "id": 1,
+        "question": "Moet ik eerst mijn software development agency halen?"
+      },
+      {
+        "id": 2,
+        "question": "Waarom beginnen software development agency een proefrijles?"
+      },
+      { "id": 3, "question": "Hoelang duurt een software development agency?" },
+      {
+        "id": 4,
+        "question": "Moet ik eerst mijn theorie-examen software development agency?"
+      }
+    ]
+  }
 }
